@@ -1,0 +1,38 @@
+---
+---
+/* 1. 기본 테마(Minima)의 디자인을 먼저 싹 불러옵니다 */
+@import "minima";
+
+/* =========================================
+   여기서부터 우리가 원하는 맞춤 디자인을 덮어씁니다 
+   ========================================= */
+
+/* 2. 사이트 전체 배경색 (아주 연한 회색/푸른빛) */
+body {
+  background-color: #f4f7f9; 
+}
+
+/* 3. 상단 메뉴바(헤더) 배경색 하얗게 고정 및 그림자 추가 */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* 4. 글이 나오는 메인 컨텐츠 영역을 '하얀색 카드' 형태로 만들기 */
+.page-content .wrapper {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px; /* 모서리 둥글게 */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* 은은한 그림자 */
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* 모바일 화면에서 카드 여백 자연스럽게 조정 */
+@media screen and (max-width: 600px) {
+  .page-content .wrapper {
+    padding: 20px;
+    margin-top: 15px;
+  }
+}
