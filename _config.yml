@@ -8,3 +8,10 @@ theme: minima
 
 # 부가 설정 (선택 사항)
 permalink: /:categories/:title/
+
+# 페이지네이션(자동 번호 매기기) 설정
+plugins:
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/why/page:num/"
