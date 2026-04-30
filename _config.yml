@@ -20,5 +20,6 @@ paginate: 10
 paginate_path: "/why/page:num/"
 
 # 상단 메뉴에 페이지 자동 추가 방지
-# 상단 메뉴에 페이지 자동 추가 방지
-header_pages: []
+# 상단 메뉴에 딱 하나의 메인 페이지만 허용 (나머지 114개는 자동 차단됨)
+header_pages:
+  - index.html
