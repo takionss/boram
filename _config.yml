@@ -20,5 +20,5 @@ paginate: 10
 paginate_path: "/why/page:num/"
 
 # 상단 메뉴에 페이지 자동 추가 방지
-header_pages:
-  - "none"
+# 상단 메뉴에 페이지 자동 추가 방지
+header_pages: []
