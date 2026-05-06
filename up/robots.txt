@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://smileslife.co.kr/sitemap.xml
