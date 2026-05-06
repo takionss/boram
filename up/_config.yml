@@ -1,0 +1,25 @@
+# 사이트 기본 설정
+title: Smiles Life - 호기심 해결
+description: Smiles Life의 흥미로운 호기심 해결 이야기
+url: "https://smileslife.co.kr"
+
+# 테마 설정 (여기서 디자인이 결정됩니다)
+theme: minima
+
+# 부가 설정 (선택 사항)
+permalink: /:categories/:title/
+
+# 페이지네이션(자동 번호 매기기) 설정
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag    # 검색엔진용 메타 태그 자동 생성
+  - jekyll-sitemap    # sitemap.xml 자동 생성
+  - jekyll-feed       # feed.xml (RSS) 자동 생성
+
+paginate: 10
+paginate_path: "/why/page:num/"
+
+# 상단 메뉴에 페이지 자동 추가 방지
+# 상단 메뉴에 딱 하나의 메인 페이지만 허용 (나머지 114개는 자동 차단됨)
+header_pages:
+  - index.html
