@@ -21,15 +21,16 @@ title: 호기심 해결
 
   /* 2. 모바일 전용 (화면 가로 768px 이하) */
   @media screen and (max-width: 768px) {
-    .hybrid-post-item {
-      /* 모바일은 여백을 줄여 글씨 공간을 더 확보합니다 */
-      padding: 15px 15px 15px 25px; 
+    .pagination {
+      font-size: 0.9em !important; /* 전체 크기 살짝 축소 */
     }
-    .hybrid-post-title {
-      /* 글씨가 두 줄로 넘어가지 않도록 크기를 줄입니다 */
-      font-size: 0.95rem; 
-      line-height: 1.4;
-      letter-spacing: -0.5px; /* 자간을 살짝 좁혀 한 줄에 더 많이 들어가게 합니다 */
+    .pagination a, .pagination span {
+      margin: 0 2px !important; /* 좌우 여백을 4px에서 2px로 줄임 */
+      padding: 5px 8px !important; /* 버튼 안쪽 여백도 살짝 줄임 */
+    }
+    .pagination a:first-child, .pagination span:first-child,
+    .pagination a:last-child, .pagination span:last-child {
+      margin: 0 5px !important; /* '이전/다음' 버튼 간격도 조정 */
     }
   }
 
