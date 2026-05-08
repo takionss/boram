@@ -7,14 +7,17 @@ title: 호기심 해결
   <h1 class="page-heading" style="text-align: center; margin-bottom: 30px;">호기심 해결</h1>
 
 <style>
+
     .hybrid-post-item {
       margin-bottom: 15px;
-      padding: 20px;
+      /* 변경 전: padding: 20px; */
+      /* 변경 후: 위, 오른쪽, 아래는 20px 유지, 왼쪽만 30px로 넓힘 */
+      padding: 20px 20px 20px 30px; 
+      
       background: #ffffff;
       border: 1px solid #eaeaea;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      /* 모바일에서 터치했을 때 즉각적인 반응을 위한 설정 */
       transition: transform 0.1s ease, box-shadow 0.2s ease, background-color 0.1s ease;
       position: relative;
     }
