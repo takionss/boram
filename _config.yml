@@ -16,7 +16,7 @@ plugins:
   - jekyll-sitemap    # sitemap.xml 자동 생성
   - jekyll-feed       # feed.xml (RSS) 자동 생성
 
-paginate: 10
+paginate: 20
 paginate_path: "/why/page:num/"
 
 # 상단 메뉴에 페이지 자동 추가 방지
