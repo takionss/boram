@@ -6,11 +6,10 @@ title: 호기심 해결
 <div class="home">
   <h1 class="page-heading" style="text-align: center; margin-bottom: 30px;">호기심 해결</h1>
 
-  <ul class="post-list" style="list-style: none; padding: 0;">
+<ul class="post-list" style="list-style: none; padding: 0;">
     {% for post in paginator.posts %}
       <li style="margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-radius: 8px;">
-        <span class="post-meta" style="color: #666; font-size: 0.9em;">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <h3 style="margin: 5px 0 0 0;">
+        <h3 style="margin: 0;">
           <a class="post-link" href="{{ post.url | relative_url }}" style="text-decoration: none; color: #333;">
             {{ post.title | escape }}
           </a>
