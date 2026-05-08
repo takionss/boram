@@ -29,20 +29,29 @@ title: 호기심 해결
       <span style="margin-right: 15px; color: #ccc; font-weight: bold;">&laquo; 이전</span>
     {% endif %}
 
+    {% assign window = 2 %} {% assign window_plus_one = window | plus: 1 %}
+
     {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-        <span class="page_number active" style="margin: 0 4px; padding: 5px 12px; background-color: #005a87; color: #fff; border-radius: 5px; font-weight: bold;">
-          {{ page }}
-        </span>
-      {% elsif page == 1 %}
-        <a href="{{ '/' | relative_url }}" style="margin: 0 4px; padding: 5px 12px; text-decoration: none; color: #333; border: 1px solid #ddd; border-radius: 5px;">
-          {{ page }}
-        </a>
-      {% else %}
-        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" style="margin: 0 4px; padding: 5px 12px; text-decoration: none; color: #333; border: 1px solid #ddd; border-radius: 5px;">
-          {{ page }}
-        </a>
+      
+      {% assign diff = paginator.page | minus: page %}
+      {% if diff < 0 %}
+        {% assign diff = diff | times: -1 %}
       {% endif %}
+
+      {% if diff <= window or page == 1 or page == paginator.total_pages %}
+        
+        {% if page == paginator.page %}
+          <span class="page_number active" style="margin: 0 4px; padding: 5px 12px; background-color: #005a87; color: #fff; border-radius: 5px; font-weight: bold;">{{ page }}</span>
+        {% elsif page == 1 %}
+          <a href="{{ '/' | relative_url }}" style="margin: 0 4px; padding: 5px 12px; text-decoration: none; color: #333; border: 1px solid #ddd; border-radius: 5px;">{{ page }}</a>
+        {% else %}
+          <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" style="margin: 0 4px; padding: 5px 12px; text-decoration: none; color: #333; border: 1px solid #ddd; border-radius: 5px;">{{ page }}</a>
+        {% endif %}
+
+      {% elsif diff == window_plus_one %}
+        <span style="margin: 0 4px; color: #999; font-weight: bold;">...</span>
+      {% endif %}
+
     {% endfor %}
 
     {% if paginator.next_page %}
