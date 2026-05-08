@@ -21,16 +21,25 @@ title: 호기심 해결
 
   /* 2. 모바일 전용 (화면 가로 768px 이하) */
   @media screen and (max-width: 768px) {
+    /* 1. 기본적으로 페이지네이션 전체 크기와 간격을 줄임 */
     .pagination {
-      font-size: 0.9em !important; /* 전체 크기 살짝 축소 */
+      font-size: 0.85rem !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+  
+    /* 2. PC용으로 만들어진 5개의 번호 중, 양 끝 2개를 숨겨서 3개만 남김 */
+    /* 현재 페이지(active)에서 멀어진 번호들을 선택해서 안 보이게 처리 */
+    .pagination a:not(:first-child):not(:last-child):nth-last-child(n+7),
+    .pagination a:not(:first-child):not(:last-child):nth-child(n+7) {
+      display: none !important;
+    }
+    
+    /* 번호가 너무 많을 때 밀리지 않도록 간격 최소화 */
     .pagination a, .pagination span {
-      margin: 0 2px !important; /* 좌우 여백을 4px에서 2px로 줄임 */
-      padding: 5px 8px !important; /* 버튼 안쪽 여백도 살짝 줄임 */
-    }
-    .pagination a:first-child, .pagination span:first-child,
-    .pagination a:last-child, .pagination span:last-child {
-      margin: 0 5px !important; /* '이전/다음' 버튼 간격도 조정 */
+      margin: 0 2px !important;
+      padding: 5px 7px !important;
     }
   }
 
