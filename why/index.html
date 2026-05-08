@@ -56,13 +56,14 @@ title: 호기심 해결
     color: #333333;
     font-weight: 700;
     display: block;
+    padding-left: 15px;
   }
   </style>
 
   <ul class="post-list" style="list-style: none; padding: 0;">
     {% for post in paginator.posts %}
       <li class="hybrid-post-item">
-        <h3 style="margin: 0; padding-left: 15px;">
+        <h3 style="margin: 0;">
           <a class="hybrid-post-title" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
