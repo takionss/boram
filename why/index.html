@@ -83,7 +83,7 @@ title: 호기심 해결
     var sjs = SimpleJekyllSearch({
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
-      json: '{{ "/search.json" | relative_url }}',
+      json: '{{ "/why/search.json" | relative_url }}',
       searchResultTemplate: '<li style="padding: 12px; border-bottom: 1px solid #f0f0f0;"><a href="{url}" style="text-decoration: none; color: #005a87; font-weight: bold; display: block;">• {title}</a></li>',
       noResultsText: '<li style="color: #999; padding: 15px; text-align: center;">일치하는 검색 결과가 없습니다.</li>',
       limit: 10
