@@ -36,7 +36,9 @@ title: 호기심 해결
   .hybrid-post-title { text-decoration: none; color: #333333; font-weight: 700; display: block; padding-left: 15px; }
   </style>
 
-  {% assign ko_posts = site.posts | where_exp: "item", "item.lang == 'ko' or item.lang == nil" %}
+  {% assign old_posts = site.posts | where_exp: "item", "item.lang == nil" %}
+  {% assign new_ko_posts = site.posts | where: "lang", "ko" %}
+  {% assign ko_posts = old_posts | concat: new_ko_posts | sort: "date" | reverse %}
   {% assign why_ko_posts = ko_posts | where_exp: "item", "item.categories contains 'why'" %}
 
   <ul class="post-list" id="paginated-list" style="list-style: none; padding: 0;">
