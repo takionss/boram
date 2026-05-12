@@ -2,7 +2,9 @@
 layout: null
 ---
 [
-  {% for post in site.posts %}
+  {% assign ko_posts = site.posts | where_exp: "item", "item.lang == 'ko' or item.lang == nil" %}
+  {% assign why_ko_posts = ko_posts | where_exp: "item", "item.categories contains 'why'" %}
+  {% for post in why_ko_posts %}
     {
       "title"    : "{{ post.title | escape }}",
       "url"      : "{{ post.url | relative_url }}",
