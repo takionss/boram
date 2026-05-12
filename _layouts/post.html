@@ -27,14 +27,25 @@ layout: default
 
     <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
       {% if lang == "ko" %}
-        {% assign same_lang_posts = site.posts | where_exp: "item", "item.lang == nil or item.lang == 'ko'" %}
+        {% assign all_posts = site.posts %}
+        {% assign filtered_posts = "" | split: "" %}
+        {% for p in all_posts %}
+          {% if p.lang == nil or p.lang == "ko" %}
+            {% assign filtered_posts = filtered_posts | push: p %}
+          {% endif %}
+        {% endfor %}
       {% else %}
-        {% assign same_lang_posts = site.posts | where: "lang", lang %}
+        {% assign filtered_posts = site.posts | where: "lang", lang %}
       {% endif %}
 
-      {% assign filtered_posts = same_lang_posts | where_exp: "item", "item.categories contains 'why'" %}
+      {% assign final_list = "" | split: "" %}
+      {% for p in filtered_posts %}
+        {% if p.url != page.url and p.categories contains "why" %}
+          {% assign final_list = final_list | push: p %}
+        {% endif %}
+      {% endfor %}
 
-      {% assign random_list = filtered_posts | where_exp: "item", "item.url != page.url" | sample: 5 %}
+      {% assign random_list = final_list | sample: 5 %}
 
       {% for post in random_list %}
         <li style="margin-bottom: 12px; line-height: 1.4;">
