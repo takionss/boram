@@ -1,0 +1,49 @@
+---
+layout: default
+title: Curiosity Solved
+---
+
+<div class="home">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <a href="{{ '/why/' | relative_url }}" style="margin: 0 10px; text-decoration: none; color: #555;">🇰🇷 한국어</a>
+    <a href="{{ '/why/en/' | relative_url }}" style="margin: 0 10px; font-weight: bold; color: #C0392B;">🇺🇸 English</a>
+    <a href="{{ '/why/ja/' | relative_url }}" style="margin: 0 10px; text-decoration: none; color: #555;">🇯🇵 日本語</a>
+    <a href="{{ '/why/zh-TW/' | relative_url }}" style="margin: 0 10px; text-decoration: none; color: #555;">🇹🇼 繁體中文</a>
+    <a href="{{ '/why/es/' | relative_url }}" style="margin: 0 10px; text-decoration: none; color: #555;">🇪🇸 Español</a>
+  </div>
+
+  <h1 class="page-heading" style="text-align: center; margin-bottom: 30px;">Curiosity Solved</h1>
+
+  {% assign en_posts = site.posts | where: "lang", "en" %}
+  {% assign why_en_posts = en_posts | where_exp: "item", "item.categories contains 'why'" %}
+
+  <ul class="post-list" id="paginated-list" style="list-style: none; padding: 0;">
+    {% for post in why_en_posts %}
+      <li class="hybrid-post-item paginated-item" style="display: none;">
+        <h3 style="margin: 0;"><a class="hybrid-post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div id="pagination-container" class="pagination" style="text-align: center; margin-top: 40px; font-size: 1.1em;"></div>
+
+  <div id="search-container" style="margin: 60px auto 40px auto; max-width: 600px; padding: 25px; background: #fff; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0; color: #333; font-size: 1.2em; text-align: center; margin-bottom: 20px;">🔍 Search Posts</h3>
+    <input type="text" id="search-input" placeholder="Search keywords..." style="width: 100%; padding: 12px 15px; border: 2px solid #005a87; border-radius: 8px; font-size: 1em; outline: none; box-sizing: border-box;">
+    <ul id="results-container" style="list-style: none; padding: 0; margin-top: 20px;"></ul>
+  </div>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '{{ "/why/en/search_en.json" | relative_url }}', // 영어 전용 검색 파일
+      searchResultTemplate: '<li style="padding: 12px; border-bottom: 1px solid #f0f0f0;"><a href="{url}" style="text-decoration: none; color: #005a87; font-weight: bold; display: block;">• {title}</a></li>',
+      noResultsText: '<li style="color: #999; padding: 15px; text-align: center;">No results found.</li>',
+      limit: 10
+    });
+
+    // 페이징 로직 (위 한국어 버전과 동일하되 버튼 텍스트만 'Prev', 'Next'로 수정해서 사용)
+  </script>
+</div>
