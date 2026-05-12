@@ -2,7 +2,9 @@
 layout: null
 ---
 [
-  {% assign ko_posts = site.posts | where_exp: "item", "item.lang == 'ko' or item.lang == nil" %}
+  {% assign old_posts = site.posts | where_exp: "item", "item.lang == nil" %}
+  {% assign new_ko_posts = site.posts | where: "lang", "ko" %}
+  {% assign ko_posts = old_posts | concat: new_ko_posts | sort: "date" | reverse %}
   {% assign why_ko_posts = ko_posts | where_exp: "item", "item.categories contains 'why'" %}
   {% for post in why_ko_posts %}
     {
