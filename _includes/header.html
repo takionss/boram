@@ -1,8 +1,27 @@
 <header class="site-header" role="banner">
+  <style>
+    @media screen and (min-width: 769px) {
+      .site-header .wrapper {
+        display: flex;
+        flex-direction: column; /* 요소를 위아래로 배치 */
+      }
+      .site-title {
+        padding-bottom: 5px; /* 제목과 메뉴 사이의 간격 */
+      }
+      .site-nav {
+        position: static !important; /* 기존 테마의 우측 고정(absolute) 해제 */
+        align-self: flex-end; /* 메뉴들을 우측 하단으로 예쁘게 정렬 */
+      }
+      .site-nav .page-link {
+        margin-left: 15px !important; /* 언어 버튼 사이의 간격 */
+      }
+    }
+  </style>
+
   <div class="wrapper">
     {% assign lang = page.lang | default: "ko" %}
 
-    <a class="site-title" rel="author" href="/why/">
+    <a class="site-title" rel="author" href="{{ '/why/' | relative_url }}">
       {{ site.titles[lang] | default: site.title | escape }}
     </a>
 
