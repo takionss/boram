@@ -17,12 +17,11 @@
       </label>
 
       <div class="trigger">
-        {%- for path in site.header_pages -%}
-          {%- assign my_page = site.pages | where: "path", path | first -%}
-          {%- if my_page.title -%}
-          <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-          {%- endif -%}
-        {%- endfor -%}
+        <a class="page-link" href="{{ '/why/' | relative_url }}" {% if lang == 'ko' %}style="font-weight: bold; color: #C0392B;"{% endif %}>🇰🇷 한국어</a>
+        <a class="page-link" href="{{ '/why/en/' | relative_url }}" {% if lang == 'en' %}style="font-weight: bold; color: #C0392B;"{% endif %}>🇺🇸 English</a>
+        <a class="page-link" href="{{ '/why/ja/' | relative_url }}" {% if lang == 'ja' %}style="font-weight: bold; color: #C0392B;"{% endif %}>🇯🇵 日本語</a>
+        <a class="page-link" href="{{ '/why/zh-TW/' | relative_url }}" {% if lang == 'zh-TW' %}style="font-weight: bold; color: #C0392B;"{% endif %}>🇹🇼 繁體中文</a>
+        <a class="page-link" href="{{ '/why/es/' | relative_url }}" {% if lang == 'es' %}style="font-weight: bold; color: #C0392B;"{% endif %}>🇪🇸 Español</a>
       </div>
     </nav>
   </div>
