@@ -21,6 +21,22 @@ paginate: 20
 paginate_path: "/why/page:num/"
 
 # 상단 메뉴에 페이지 자동 추가 방지
-# 상단 메뉴에 딱 하나의 메인 페이지만 허용 (나머지 114개는 자동 차단됨)
 header_pages:
   - index.html
+
+# ----------------------------------------------------------------
+# [추가된 부분] 언어별 사이트 타이틀 및 설명 설정
+# ----------------------------------------------------------------
+titles:
+  ko: "Smiles Life - 호기심 해결"
+  en: "Smiles Life - Curiosity Solved"
+  ja: "Smiles Life - 好奇心解決"
+  zh-TW: "Smiles Life - 滿足好奇心"
+  es: "Smiles Life - Curiosidades Resueltas"
+
+descriptions:
+  ko: "Smiles Life의 흥미로운 호기심 해결 이야기"
+  en: "Interesting stories of solving curiosity from Smiles Life"
+  ja: "Smiles Lifeの 興味深い好奇心解決の物語"
+  zh-TW: "Smiles Life 那些有趣的滿足好奇心故事"
+  es: "Historias interesantes sobre la resolución de curiosidades de Smiles Life"
