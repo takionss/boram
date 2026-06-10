@@ -17,8 +17,24 @@ plugins:
   - jekyll-feed       # feed.xml (RSS) 자동 생성
   - jekyll-redirect-from
 
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sitemap
 paginate: 20
-paginate_path: "/page:num/"
+paginate_path: "/why/page:num/"
 
 # 상단 메뉴에 페이지 자동 추가 방지
 header_pages:
@@ -29,21 +45,21 @@ header_pages:
 # ----------------------------------------------------------------
 titles:
   ko: "Smiles Life - 호기심 해결"
-  en: "Smiles Life - Curiosity Resolved"
-  ja: "Smiles Life - 疑問の解決"
+  en: "Smiles Life - Solving Curiosity"
+  ja: "Smiles Life - 好奇心の解決"
   zh-TW: "Smiles Life - 解答好奇心"
-  es: "Smiles Life - Resolución de curiosidades"
+  es: "Smiles Life - Resolver curiosidades"
 
 descriptions:
   ko: "Smiles Life의 흥미로운 호기심 해결 이야기"
   en: "Interesting stories that satisfy your curiosity by Smiles Life"
-  ja: "Smiles Life의興味深い疑問を解決するストーリー"
+  ja: "Smiles Life의興味深い好奇心を解決するお話"
   zh-TW: "Smiles Life - 有趣的好奇心解答故事"
   es: "Smiles Life - Historias interesantes para resolver curiosidades sobre Smiles Life"
 
 random_post_titles:
   ko: "🎲 이런 글은 어떠세요?"
-  en: "How about reading this?"
-  ja: "こんな記事はいかがですか？"
+  en: "How about reading this post?"
+  ja: "このような記事はいかがですか？"
   zh-TW: "这种文章您觉得如何？"
-  es: "¿Qué le parece este artículo?"
+  es: "¿Qué te parece este tipo de artículo?"
